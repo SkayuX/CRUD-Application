@@ -34,7 +34,7 @@ const Home = () => {
                 <>
                     {user ? (
                         <>
-                            {user.name}
+                            <p className="text-3xl text-violet-600">{user.name}</p>
                         </>
                     ) : (
                         <>
