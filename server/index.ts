@@ -19,8 +19,8 @@ app.post("/api/v1/auth/fetchUser", (req, res) => {
             data: {
                 code: 200,
                 user: {
-                    name: "string",
-                    avatar: "string",
+                    name: "to jest nazwa uzytkownika",
+                    avatar: "to jest jego avatar",
                     dateCreated: "string",
                     aboutMe: "string",
                     uniqueId: "string"
@@ -31,7 +31,31 @@ app.post("/api/v1/auth/fetchUser", (req, res) => {
         setTimeout(() => {
             console.log('Timeout Started...')
             res.status(200).send(object);
-        }, 3500)
+        }, 2000)
+    }
+})
+
+app.post('/api/v1/auth/login', (req, res) => {
+    const { username, password } = req.body;
+    console.log(username, password)
+    if (username === 'skayu' && password === '12345') {
+        res.send({
+            status: true,
+            data: {
+                code: 200,
+                message: "Logged In",
+                cookie: "10"
+            }
+        })
+    } else {
+        res.send({
+            status: false,
+            data: {
+                code: 400,
+                message: "Invalid Data",
+                cookie: null
+            }
+        })
     }
 })
 
