@@ -41,7 +41,14 @@ export const AuthProvider = ({ children }: AuxProps) => {
 
   return (
     <AuthContext.Provider
-      value={{ authed, authLoaded: loading, setAuthed, user, setUser, setLoaded }}
+      value={{
+        authed,
+        authLoaded: loading,
+        setAuthed,
+        user,
+        setUser,
+        setLoaded,
+      }}
     >
       {children}
     </AuthContext.Provider>

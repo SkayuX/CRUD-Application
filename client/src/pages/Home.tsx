@@ -20,7 +20,7 @@ const HomePage = () => {
   }, [user]);
 
   if (!pageLoaded) {
-    return <>Loading</>
+    return <>Loading</>;
   }
 
   return (
