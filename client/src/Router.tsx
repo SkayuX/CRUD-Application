@@ -8,18 +8,17 @@ import HomePage from "./pages/Home";
 import LoginPage from "./pages/Login";
 import LoadingPage from "./pages/LoadingPage";
 
+import { useAppState } from "./utils/hooks/appStateProvider";
 import { useAuth } from "./utils/hooks/authProvider";
 
 import "./index.css";
 
 const Router = () => {
-  const { loading } = useAuth();
+  const { appLoaded } = useAppState();
 
   return (
     <>
-      {loading ? (
-        <LoadingPage />
-      ) : (
+      {appLoaded ? (
         <>
           <BrowserRouter>
             <Switch>
@@ -28,6 +27,8 @@ const Router = () => {
             </Switch>
           </BrowserRouter>
         </>
+      ) : (
+        <LoadingPage />
       )}
     </>
   );

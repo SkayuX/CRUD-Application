@@ -19,13 +19,13 @@ const HomePage = () => {
     setUserData(user);
   }, [user]);
 
+  if (!pageLoaded) {
+    return <>Loading</>
+  }
+
   return (
     <>
-      {pageLoaded ? (
-        <>{userData ? <>{userData.name}</> : <>No User</>}</>
-      ) : (
-        <>Loading</>
-      )}
+      <>{userData ? <>{userData.name}</> : <>No User</>}</>
     </>
   );
 };

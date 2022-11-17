@@ -19,10 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "controllers/*": ["./utils/controllers/*"],
-      "hooks/*": ["./utils/hooks/*"],
+      "controllers/*": ["./src/utils/controllers/*"],
+      "hooks/*": ["./src/utils/hooks/*"],
+      "utils/*": ["./src/utils/*"]
     }
   },
   "include": [

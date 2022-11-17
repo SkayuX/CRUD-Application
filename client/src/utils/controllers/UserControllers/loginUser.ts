@@ -1,4 +1,4 @@
-import { API_URL } from "utils/constants";
+import { API_URL } from "../../constants";
 
 interface loginReturn {
   status: boolean;

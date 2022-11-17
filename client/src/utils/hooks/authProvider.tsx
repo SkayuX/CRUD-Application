@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { User } from "utils/types";
-import getUserController from "../controllers/getUser";
-import getCookieByKey from "./getCookieByKey";
+import { User } from "../types";
+import getUserController from "../controllers/UserControllers/getUser";
+import getCookie from "../functions/getCookie";
 
 const AuthContext = createContext<any>(null);
 
@@ -12,14 +12,14 @@ interface AuxProps {
 export const AuthProvider = ({ children }: AuxProps) => {
   const [authed, setAuthed] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>();
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoaded] = useState<boolean>(true);
 
   useEffect(() => {
-    initializeCheck().then(() => setLoading(false));
+    initializeCheck().then(() => setLoaded(true));
   }, []);
 
   const initialUserCheck = async () => {
-    let sessionId = getCookieByKey("sid");
+    let sessionId = getCookie("sid");
     if (!sessionId) {
       setUser(null);
       setAuthed(false);
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: AuxProps) => {
 
   return (
     <AuthContext.Provider
-      value={{ authed, loading, setAuthed, user, setUser, setLoading }}
+      value={{ authed, authLoaded: loading, setAuthed, user, setUser, setLoaded }}
     >
       {children}
     </AuthContext.Provider>

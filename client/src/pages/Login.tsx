@@ -1,5 +1,5 @@
 import { useState } from "react";
-import loginUser from "../utils/controllers/loginUser";
+import loginUser from "../utils/controllers/UserControllers/loginUser";
 
 const LoginPage = () => {
   const [username, setUsername] = useState<string>("");

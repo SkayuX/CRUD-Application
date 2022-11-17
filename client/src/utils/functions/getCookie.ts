@@ -6,7 +6,7 @@ const cookies = new Cookies();
  * @param {string} key
  * @returns {string | null | undefined}
  */
-const getCookieByKey = (key: string): string | null | undefined => {
+const getCookie = (key: string): string | null | undefined => {
   const cookie = cookies.get(key);
 
   if (!cookie) {
@@ -16,4 +16,4 @@ const getCookieByKey = (key: string): string | null | undefined => {
   return cookie;
 };
 
-export default getCookieByKey;
+export default getCookie;

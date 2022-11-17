@@ -1,5 +1,5 @@
 import { User } from "utils/types";
-import { API_URL } from "../constants";
+import { API_URL } from "../../constants";
 
 const getUserController = async (sessionId: string): Promise<User | null> => {
   let user;
