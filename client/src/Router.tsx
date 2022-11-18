@@ -5,8 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import HomePage from "./pages/Home";
-import LoginPage from "./pages/Login";
-import LoadingPage from "./pages/LoadingPage";
+import LoginPage from "./pages/auth/Login";
+import LoadingPage from "./pages/utils/LoadingPage";
 
 import { useAppState } from "./utils/hooks/appStateProvider";
 import { useAuth } from "./utils/hooks/authProvider";

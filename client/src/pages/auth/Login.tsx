@@ -1,7 +1,7 @@
 import { useState } from "react";
-import loginUser from "../utils/controllers/UserControllers/loginUser";
+import loginUser from "../../utils/controllers/UserControllers/loginUser";
 
-const RegisterPage = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [useEmail, setUseEmail] = useState<boolean>(false);
@@ -51,4 +51,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
